@@ -1,0 +1,17 @@
+/**************************
+** Placeholder Selectors **
+**************************/
+%reset-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+%normalize-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1;
+}

@@ -1,0 +1,11 @@
+@use '../abstract/functions' as fn;
+@use '../abstract/mixins';
+@use '../base/ph-selectors';
+@use '../base/variables' as var;
+
+/******************
+** Footer Styles **
+******************/
+.footer {
+    position: relative;
+}

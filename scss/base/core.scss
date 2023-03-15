@@ -1,0 +1,55 @@
+@use '../abstract/mixins.scss';
+@use './ph-selectors.scss';
+@use './variables' as var;
+
+/****************
+** Core Styles **
+****************/
+:root {
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    @include mixins.full-relative;
+}
+
+#root {
+    @include mixins.d-flex(column, unset, unset);
+}
+
+.container {
+    position: relative;
+    max-width: var.$container-width;
+    width: 100%;
+    margin: 0 auto
+}
+
+img {
+    @extend %normalize-img;
+}
+
+button,
+input {
+    @extend %reset-btn;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

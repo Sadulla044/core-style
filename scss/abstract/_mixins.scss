@@ -1,0 +1,70 @@
+@use './functions.scss' as fn;
+@use '../base/variables' as var;
+
+
+//***** Mixins *****//
+@mixin d-flex($direction, $align, $justify, $wrap: nowrap, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+    gap: $gap;
+}
+
+@mixin full-relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absolute-corner($Y, $X) {
+    @if $Y != 'top' or 'bottom' {
+        @error '#{$Y} should be `top` or `bottom`';
+    }
+    @if $X != 'left' or 'right' {
+        @error '#{$X} should be `left` or `right`';
+    }
+
+    position: absolute;
+    $Y: 0;
+    $X: 0;
+}
+
+//***** Media Quaries *****//
+@mixin breakpoint--small($max-width: var.$breakpoint--small) {
+    @media screen and (max-width: #{fn.px-to-rem($max-width)}) {
+        @content;
+    }
+}
+
+@mixin breakpoint--medium($max-width: var.$breakpoint--medium) {
+    @media screen and (max-width: #{fn.px-to-rem($max-width)}) {
+        @content;
+    }
+}
+
+@mixin breakpoint--large($max-width: var.$breakpoint--large) {
+    @media screen and (max-width: #{fn.px-to-rem($max-width)}) {
+        @content;
+    }
+}
+
+@mixin breakpoint--x-large($max-width: var.$breakpoint--x-large) {
+    @media screen and (max-width: #{fn.px-to-rem($max-width)}) {
+        @content;
+    }
+}
+
+@mixin breakpoint--container($max-width: var.$container-width) {
+    @media screen and (max-width: #{fn.px-to-rem($max-width)}) {
+        @content;
+    }
+}

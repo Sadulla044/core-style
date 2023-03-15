@@ -1,0 +1,12 @@
+//***** Functions *****//
+@function px-to-rem($pixels, $font-size: 16px) {
+    @return ($pixels / $font-size * 1rem);
+  }
+  
+  @function px-to-em($pixels, $font-size: 16px) {
+    @return ($pixels / $font-size * 1em);
+  }
+  
+  @function px-to-unitless($pixels, $font-size: 16px) {
+    @return ($pixels / $font-size);
+  }
